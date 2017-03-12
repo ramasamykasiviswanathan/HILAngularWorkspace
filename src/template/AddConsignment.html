@@ -1,0 +1,142 @@
+<form novalidate name="addConsignmentForm" ng-submit="addItemctrl.submit(addItemctrl)">
+	<!-- {{addItemctrl.hasError}} -->
+	<div class="alert alert-danger align:center;" role="alert"  ng-show="addItemctrl.hasError">
+	    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+	    <span class="sr-only">Error:</span>
+	    Error Submitting Data.
+	</div>
+
+	<legend>
+		<div class="page-Header">
+			<h2>Invoice &amp; Consignment Details</h2>
+		</div>
+	</legend>
+
+	<div class="row tableSpacing">
+	  <div class="col-md-4">
+	    <div class="input-group" ng-class="{'has-error' : addConsignmentForm.customerName.$invalid}">
+	      <span class="input-group-addon" id="customerName"><em>Customer Name</em></span>
+	      <input type="text" name="customerName" ng-model="addItemctrl.customerName" label="customerName" class="form-control" aria-describedby="customerName" ng-required="true" required>
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.customerName}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group">
+	      <span class="input-group-addon" id="customerPlace"><em>Customer Place</em></span>
+	      <input type="text" name="customerPlace" id="customerPlace" ng-model="addItemctrl.customerPlace" class="form-control" aria-describedby="customerPlace">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.customerPlace}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group" ng-class="{'has-error' : addConsignmentForm.consigneeName.$invalid}">
+	      <span class="input-group-addon" id="consigneeName"><em>Consignee Name</em></span>
+	      <input type="text" name="consigneeName" id="consigneeName" class="form-control" aria-describedby="consigneeName" ng-model="addItemctrl.consigneeName" ng-required="true" required>
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.consigneeName}} -->
+	  </div><!-- /.col-md-4 -->
+	</div><!-- /.row -->
+
+	<div class="row tableSpacing">
+	  <div class="col-md-4">
+	    <div class="input-group">
+	      <span class="input-group-addon" id="consigneePlace"><em>Consignee Place</em></span>
+	      <input type="text" name="consigneePlace" ng-model="addItemctrl.consigneePlace" label="consigneePlace" class="form-control" aria-describedby="consigneePlace">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.consigneePlace}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group" ng-class="{'has-error' : addConsignmentForm.siteLocation.$invalid}">
+	      <span class="input-group-addon" id="siteLocation"><em>Site Location</em></span>
+	      <input type="text" name="siteLocation" id="siteLocation" ng-model="addItemctrl.siteLocation" class="form-control" aria-describedby="siteLocation" ng-required="true" required>
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.siteLocation}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group">
+	      <span class="input-group-addon" id="salesOrderNo"><em>Sales Order No</em></span>
+	      <input type="text" name="salesOrderNo" id="salesOrderNo" class="form-control" aria-describedby="salesOrderNo" ng-model="addItemctrl.salesOrderNo">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.salesOrderNo}} -->
+	  </div><!-- /.col-md-4 -->
+	</div><!-- /.row -->
+
+	<div class="row tableSpacing">
+	  <div class="col-md-4">
+	    <div class="input-group" ng-class="{'has-error' : addConsignmentForm.material.$invalid}">
+	      <span class="input-group-addon" id="material"><em>Material</em></span>
+	      <input type="text" name="material" ng-model="addItemctrl.material" label="material" class="form-control" aria-describedby="material" ng-required="true" required>
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.material}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group" ng-class="{'has-error' : addConsignmentForm.Quantity.$invalid}">
+	      <span class="input-group-addon" id="Quantity"><em>Quantity</em></span>
+	      <input type="number" name="Quantity" id="Quantity" ng-model="addItemctrl.Quantity" class="form-control" aria-describedby="Quantity" ng-required="true" required min="1" step="1">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.Quantity}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group">
+	      <span class="input-group-addon" id="uom"><em>UOM</em></span>
+	      <input type="text" name="uom" id="uom" class="form-control" aria-describedby="uom" ng-model="addItemctrl.uom">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.uom}} -->
+	  </div><!-- /.col-md-4 -->
+	</div><!-- /.row -->
+
+	<legend>
+		<div class="page-Header">
+			<h2>Truck Details</h2>
+		</div>
+	</legend>
+
+	<div class="row tableSpacing">
+	  <div class="col-md-4">
+	    <div class="input-group">
+	      <span class="input-group-addon" id="truckNo"><em>Truck No</em></span>
+	      <input type="text" name="truckNo" ng-model="addItemctrl.truckNo" label="truckNo" class="form-control" aria-describedby="truckNo">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.truckNo}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group">
+	      <span class="input-group-addon" id="transporter"><em>Transporter</em></span>
+	      <input type="text" name="transporter" id="transporter" ng-model="addItemctrl.transporter" class="form-control" aria-describedby="transporter">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.transporter}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group">
+	      <span class="input-group-addon" id="capacity"><em>Capacity</em></span>
+	      <input type="text" name="capacity" id="capacity" class="form-control" aria-describedby="capacity" ng-model="addItemctrl.capacity">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.capacity}} -->
+	  </div><!-- /.col-md-4 -->
+	</div><!-- /.row -->
+	<div class="row tableSpacing">
+	  <div class="col-md-4">
+	    <div class="input-group">
+	      <span class="input-group-addon" id="driver"><em>Driver</em></span>
+	      <input type="text" name="driver" ng-model="addItemctrl.driver" label="driver" class="form-control" aria-describedby="driver">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.driver}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group">
+	      <span class="input-group-addon" id="mobileNo"><em>Mobile No</em></span>
+	      <input type="tel" name="mobileNo" id="mobileNo" ng-model="addItemctrl.mobileNo" class="form-control" aria-describedby="mobileNo">
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.mobileNo}} -->
+	  </div><!-- /.col-md-4 -->
+	  <div class="col-md-4">
+	    <div class="input-group" ng-class="{'has-error' : addConsignmentForm.invoiceNo.$invalid}">
+	      <span class="input-group-addon" id="invoiceNo"><em>Invoice No</em></span>
+	      <input type="text" name="invoiceNo" id="invoiceNo" class="form-control" aria-describedby="invoiceNo" ng-model="addItemctrl.invoiceNo" ng-required="true" required>
+	    </div><!-- /input-group -->
+	    <!-- {{addItemctrl.invoiceNo}} -->
+	  </div><!-- /.col-md-4 -->
+	</div><!-- /.row -->
+
+ 	<button class="btn btn-primary btn-block" type="submit" ng-disabled="addConsignmentForm.$invalid || addConsignmentForm.$submitted" ng-class="{'btn-success' : addConsignmentForm.$submitted}">Add Consignment</button>
+ 	<!-- {{addItemctrl}} -->
+</form>

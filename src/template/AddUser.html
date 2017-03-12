@@ -1,0 +1,26 @@
+ <form class="form-signin" name="addUserForm" ng-submit="addUsrCtrl.submit(addUsrCtrl.username, addUsrCtrl.password)" novalidate>
+ <div class="alert alert-danger align:center;" role="alert"  ng-show="addUsrCtrl.submitError">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      Error Submitting Data.
+  </div>
+
+  <h3 class="form-signin-heading">AddUser</h3>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <div class="input-group" ng-class="{ 'has-error' : addUserForm.inputEmail.$invalid, 'has-success' : addUserForm.inputEmail.$valid && addUserForm.inputEmail.$dirty}">
+    <input type="email" class="form-control" placeholder="Email address" ng-required="true" ng-model="addUsrCtrl.username" name="inputEmail"  autofocus required id="inputEmail">
+    <div class="input-group-addon">@hil.com</div>
+  </div>
+  <div ng-class="{'has-error': addUserForm.inputPassword.$invalid || (addUsrCtrl.password !== addUsrCtrl.confirmPassword), 'has-success': addUserForm.inputPassword.$valid || (addUsrCtrl.password === addUsrCtrl.confirmPassword)}"  class="form-group has-feedback">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" class="form-control" placeholder="Password" ng-required="true" ng-model="addUsrCtrl.password" name="inputPassword">
+    <span ng-class="{'glyphicon glyphicon-remove form-control-feedback': addUserForm.inputPassword.$invalid || (addUsrCtrl.password !== addUsrCtrl.confirmPassword), 'glyphicon glyphicon-ok form-control-feedback': addUserForm.inputPassword.$valid || (addUsrCtrl.password === addUsrCtrl.confirmPassword),'sr-only': addUserForm.inputPassword.$pristine && addUserForm.confirmPassword.$pristine}" aria-hidden="true"/>
+  </div>
+  <div ng-class="{'has-error': addUserForm.confirmPassword.$invalid || (addUsrCtrl.password !== addUsrCtrl.confirmPassword), 'has-success': addUserForm.confirmPassword.$valid || (addUsrCtrl.password === addUsrCtrl.confirmPassword)}" class="form-group has-feedback"
+  >
+    <label for="confirmPassword" class="sr-only">Confirm Password</label>
+    <input type="password" class="form-control" placeholder="Confirm Password" ng-required="true" ng-model="addUsrCtrl.confirmPassword" name="confirmPassword">
+    <span ng-class="{'glyphicon glyphicon-remove form-control-feedback': addUserForm.confirmPassword.$invalid || (addUsrCtrl.password !== addUsrCtrl.confirmPassword), 'glyphicon glyphicon-ok form-control-feedback': addUserForm.inputPassword.$valid || (addUsrCtrl.password === addUsrCtrl.confirmPassword),'sr-only': addUserForm.inputPassword.$pristine && addUserForm.confirmPassword.$pristine}" aria-hidden="true"/>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="addUserForm.$invalid || addUserForm.$submitted || (addUsrCtrl.password !== addUsrCtrl.confirmPassword)">Add User</button>
+</form>
