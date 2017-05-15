@@ -58,3 +58,6 @@ body{padding-top: 70px;}
 *{
   font-family: "Georgia","Verdana","Times New Roman";
 }
+div#goSearchID{
+  margin-top: 10em;
+}

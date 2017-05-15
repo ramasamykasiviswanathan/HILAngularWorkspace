@@ -36,7 +36,9 @@
 			templateUrl:"src/template/AddUser.html"
 		})
 		.when('/',{
-			controllerAs
+			controller:'HomeScreenController',
+			controllerAs:'homeScreenCtrl',
+			templateUrl:"src/template/HomeScreen.html"
 		});
 	}
 

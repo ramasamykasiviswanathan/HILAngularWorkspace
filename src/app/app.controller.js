@@ -12,9 +12,10 @@
 	.controller('LoginController',
 		LoginController)
 	.controller('AddItemController',AddItemController)
-	.controller('AddUserController',AddUserController);
+	.controller('AddUserController',AddUserController)
+	.controller('HomeScreenController',HomeScreenController);
 
-	populateRootScope.$inject=['$rootScope','AUTHENTICATION_MODAL','$log']
+	populateRootScope.$inject=['$rootScope','AUTHENTICATION_MODAL','$log'];
 	function populateRootScope ($rootScope,AUTHENTICATION_MODAL,$log) {
 		$log.debug("populateRootScope");
       $rootScope.AUTHENTICATION_MODAL = AUTHENTICATION_MODAL;
@@ -60,7 +61,7 @@
 		}
 	}
 
-	AddItemController.$inject=['$log','$location','DEFAULT_ROUTE_PATH']
+	AddItemController.$inject=['$log','$location','DEFAULT_ROUTE_PATH'];
 	function AddItemController($log,$location,DEFAULT_ROUTE_PATH)
 	{
 		$log.debug("AddItemController");
@@ -68,13 +69,14 @@
 		vm.submit = function (addItemctrl) {
 			addItemctrl.invoiceDate = new Date;
 			$log.debug("addItemctrl"+JSON.stringify(addItemctrl));
-			vm.hasError=true;
+			vm.hasError=false;
 
 			/**TODO Persisting Data**/
 			$location.path(DEFAULT_ROUTE_PATH);
 		}
 	}
-	AddUserController.$inject=['$log','$location','DEFAULT_ROUTE_PATH']
+
+	AddUserController.$inject=['$log','$location','DEFAULT_ROUTE_PATH'];
 	function AddUserController ($log,$location,DEFAULT_ROUTE_PATH) {
 		$log.debug("AddUserController");
 		let vm = this;
@@ -85,5 +87,11 @@
 			/**TODO Persisting Data**/
 			$location.path(DEFAULT_ROUTE_PATH);
 		}
+	}
+
+	HomeScreenController.$inject=['$log','$location','DEFAULT_ROUTE_PATH'];
+	function HomeScreenController ($log, $location, DEFAULT_ROUTE_PATH) {
+		$log.debug("HomeScreenController");
+		let vm = this;
 	}
 })()
